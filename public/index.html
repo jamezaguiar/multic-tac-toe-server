@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    let socket = io()
+    function test(position) {
+      socket.emit('position', position)
+      var pos = document.getElementById(position);
+      pos.innerHTML = position;
+    }
+  </script>
+  <body>
+    <div class="board">
+      <div id="1" onclick="test(1)"></div>
+      <div id="2" onclick="test(2)"></div>
+      <div id="3" onclick="test(3)"></div>
+      <div id="4" onclick="test(4)"></div>
+      <div id="5" onclick="test(5)"></div>
+      <div id="6" onclick="test(6)"></div>
+      <div id="7" onclick="test(7)"></div>
+      <div id="8" onclick="test(8)"></div>
+      <div id="9" onclick="test(9)"></div>
+    </div>
+    <button onclick="test()"></button>
+  </body>
+</html>
